@@ -5,173 +5,74 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/alarm2Minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/alarmCheckBox2"
+        android:layout_alignBottom="@+id/alarmCheckBox2"
+        android:layout_alignStart="@+id/alarm1Minutes"
+        android:text="yy" />
+
     <Button
         android:id="@+id/timepointButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/timeButton"
-        android:layout_alignBottom="@+id/timeButton"
-        android:layout_alignStart="@+id/highButton"
-        android:enabled="false"
-        android:onClick="onSendTP"
-        android:text="Send TP" />
-
-    <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_below="@+id/timeButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="name"/>
-
-    <LinearLayout
-        android:id="@+id/rectangle"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/rssiTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
-        android:background="#FF0000"
-        android:orientation="vertical"
-        android:padding="10dp">
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/lowButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/midButton"
-        android:layout_marginRight="21dp"
-        android:layout_toLeftOf="@+id/midButton"
         android:enabled="false"
-        android:onClick="onLow"
-        android:text="Low" />
+        android:onClick="onSendTPDynamic"
+        android:text="Set Alarms" />
 
     <Button
         android:id="@+id/timeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/switch1"
-        android:layout_marginTop="22dp"
-        android:layout_toEndOf="@+id/lowButton"
+        android:layout_alignEnd="@+id/connectButton"
+        android:layout_below="@+id/connectButton"
         android:enabled="false"
         android:onClick="onSetTime"
         android:text="Set Time" />
 
     <Button
-        android:id="@+id/batteryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/potsButton"
-        android:layout_below="@+id/flushClose"
-        android:enabled="false"
-        android:onClick="onBattery"
-        android:text="Battery" />
-
-    <Button
-        android:id="@+id/flushClose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/batteryButton"
-        android:layout_below="@+id/flushOpen"
-        android:enabled="false"
-        android:onClick="onFlushClose"
-        android:text="FlushClose" />
-
-    <Button
-        android:id="@+id/flushOpen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/potsButton"
-        android:layout_below="@+id/potsButton"
-        android:enabled="false"
-        android:onClick="onFlushOpen"
-        android:text="FlushOpen" />
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/timeButton"
-        android:layout_below="@+id/timeButton"
-        android:enabled="false"
-        android:onClick="onStart"
-        android:text="Start" />
-
-    <Button
         android:id="@+id/stopButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/timepointButton"
-        android:layout_below="@+id/timepointButton"
+        android:layout_alignEnd="@+id/connectButton"
+        android:layout_below="@+id/startButton"
         android:enabled="false"
         android:onClick="onStop"
         android:text="Stop" />
 
     <Button
-        android:id="@+id/potsButton"
+        android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/timeButton"
-        android:layout_alignBottom="@+id/timeButton"
-        android:layout_alignStart="@+id/lowButton"
+        android:layout_alignEnd="@+id/connectButton"
+        android:layout_below="@+id/timepointButton"
         android:enabled="false"
-        android:onClick="onSetPots"
-        android:text="Set Pots" />
+        android:onClick="onStart"
+        android:text="Start" />
 
     <Button
-        android:id="@+id/midButton"
+        android:id="@+id/disconnectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rectangle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
+        android:layout_alignEnd="@+id/timepointButton"
+        android:layout_below="@+id/stopButton"
         android:enabled="false"
-        android:onClick="onMid"
-        android:text="Mid" />
-
-    <Button
-        android:id="@+id/highButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/midButton"
-        android:layout_alignBottom="@+id/midButton"
-        android:layout_marginLeft="28dp"
-        android:layout_toRightOf="@+id/midButton"
-        android:enabled="false"
-        android:onClick="onHigh"
-        android:text="High" />
+        android:onClick="onDisconnect"
+        android:text="Disconnect" />
 
     <Button
         android:id="@+id/connectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/startButton"
-        android:layout_below="@+id/startButton"
+        android:layout_below="@+id/msgTextView"
+        android:layout_centerHorizontal="true"
         android:enabled="true"
         android:onClick="onConnect"
         android:text="Connect" />
-
-    <Button
-        android:id="@+id/logButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/connectButton"
-        android:layout_below="@+id/flushClose"
-        android:enabled="false"
-        android:onClick="onReadLog"
-        android:text="Read Log" />
-
-    <Button
-        android:id="@+id/pauseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/connectButton"
-        android:layout_alignBottom="@+id/connectButton"
-        android:layout_alignStart="@+id/timepointButton"
-        android:enabled="false"
-        android:onClick="onPause"
-        android:text="Pause" />
 
     <TextView
         android:id="@+id/msgTextView"
@@ -181,14 +82,52 @@
         android:layout_centerHorizontal="true"
         android:text="" />
 
-    <Switch
-        android:id="@+id/switch1"
+    <CheckBox
+        android:id="@+id/alarmCheckBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/rectangle"
-        android:layout_alignRight="@+id/rectangle"
-        android:layout_below="@+id/lowButton"
-        android:layout_marginTop="26dp"
-        android:text="Share" />
+        android:layout_below="@+id/disconnectButton"
+        android:layout_marginTop="34dp"
+        android:layout_toStartOf="@+id/disconnectButton"
+        android:onClick="setAlarm1"
+        android:text="Morning" />
+
+    <CheckBox
+        android:id="@+id/alarmCheckBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/alarmCheckBox1"
+        android:layout_below="@+id/alarmCheckBox1"
+        android:layout_marginTop="23dp"
+        android:onClick="setAlarm2"
+        android:text="Evening" />
+
+    <TextView
+        android:id="@+id/alarm1Minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/alarm1Hours"
+        android:layout_alignBottom="@+id/alarm1Hours"
+        android:layout_marginStart="21dp"
+        android:layout_toEndOf="@+id/alarm1Hours"
+        android:text="yy" />
+
+    <TextView
+        android:id="@+id/alarm1Hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/alarmCheckBox1"
+        android:layout_alignBottom="@+id/alarmCheckBox1"
+        android:layout_toEndOf="@+id/timepointButton"
+        android:text="xx" />
+
+    <TextView
+        android:id="@+id/alarm2Hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/alarmCheckBox2"
+        android:layout_alignBottom="@+id/alarmCheckBox2"
+        android:layout_toEndOf="@+id/timepointButton"
+        android:text="xx" />
 
 </RelativeLayout>

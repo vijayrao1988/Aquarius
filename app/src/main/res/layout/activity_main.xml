@@ -9,15 +9,16 @@
     android:paddingTop="10dp"
     android:orientation="vertical"
     tools:context=".ui.MainActivity" >
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:paddingLeft="10dip"
-        android:textSize="20dp"
         android:paddingBottom="10dp"
+        android:paddingLeft="10dip"
+        android:text="Connect Your Aquarius"
         android:textColor="@color/colorPrimaryDark"
-        android:text="Bluetooth Developer Starter Kit" />
+        android:textSize="20dp" />
     <ListView
         android:id="@+id/deviceList"
         android:layout_width="match_parent"
